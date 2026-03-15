@@ -3,6 +3,7 @@ import { BrowserRouter,Routes,Route } from "react-router-dom";
 import './App.css'
 import Auth from './pages/Auth';
 import EmployeeList from './pages/EmployeeList';
+import ProtectedRoute from './components/ProtectedRoute';
 function App() {
   
 
@@ -10,7 +11,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Auth />} />
-        <Route path='/employeelist' element={<EmployeeList />} />
+        <Route path='/employeelist' element={<ProtectedRoute><EmployeeList /></ProtectedRoute>} />
 
       </Routes>
     </BrowserRouter>

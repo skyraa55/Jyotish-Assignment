@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import { useAuth } from "../context/AuthContext";
 const BASE_URL = "http://localhost:3000";
 
 export default function Signup({ onSwitchToLogin }) {
@@ -9,6 +9,7 @@ export default function Signup({ onSwitchToLogin }) {
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
+    const { login } = useAuth();
     const navigate = useNavigate();
     const handleSignup = async () => {
         if (!username || !password) {
@@ -22,7 +23,7 @@ export default function Signup({ onSwitchToLogin }) {
                 username,
                 password,
             });
-            localStorage.setItem("token", res.data.token);
+           login(res.data.token);
             navigate("/employeelist");
 
         } catch (err) {
