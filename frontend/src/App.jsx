@@ -4,6 +4,7 @@ import './App.css'
 import Auth from './pages/Auth';
 import EmployeeList from './pages/EmployeeList';
 import ProtectedRoute from './components/ProtectedRoute';
+import Details from './pages/Details';
 function App() {
   
 
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Auth />} />
         <Route path='/employeelist' element={<ProtectedRoute><EmployeeList /></ProtectedRoute>} />
+        <Route path='/details/:id' element={<Details />} />
 
       </Routes>
     </BrowserRouter>
