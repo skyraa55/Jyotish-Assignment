@@ -16,7 +16,7 @@ function App() {
         <Route path='/' element={<Auth />} />
         <Route path='/employeelist' element={<ProtectedRoute><EmployeeList /></ProtectedRoute>} />
         <Route path='/details/:id' element={<Details />} />
-        <Route path='/analytics' element={<Analytics />} />
+        <Route path='/analytics/:id' element={<Analytics />} />
 
       </Routes>
     </BrowserRouter>

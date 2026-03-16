@@ -67,7 +67,7 @@ export default function Details() {
         link.href = finalImage;
         link.download = "employee_photo_signature.png";
         link.click();
-        navigate("/analytics");
+        navigate(`/analytics/${id}`);
 
     }
     return (
@@ -76,7 +76,7 @@ export default function Details() {
             <div className="bg-white rounded-2xl p-4 border border-gray-200 shadow-2xl">
                 <div className="flex gap-2">
                     <video ref={videoRef} autoPlay width={300} height={200} className="rounded-xl" />
-                        <canvas ref={drawCanvasRef} width="300" height={200} style={{ border: "1px solid #e5e7eb",borderRadius:"10px" }} onMouseDown={startDrawing} onMouseLeave={stopDrawing} onMouseUp={stopDrawing} onMouseMove={draw} />
+                        <canvas ref={drawCanvasRef} width="300" height={100} style={{ border: "1px solid #e5e7eb",borderRadius:"10px" }} onMouseDown={startDrawing} onMouseLeave={stopDrawing} onMouseUp={stopDrawing} onMouseMove={draw} />
                           {/* <h2 className="px-3 py-3 rounded-lg bg-green-500 text-white" >Signature</h2> */}
                 </div>
 

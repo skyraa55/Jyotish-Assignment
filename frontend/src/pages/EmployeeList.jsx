@@ -48,7 +48,7 @@ export default function EmployeeList() {
     const offsetY = startIndex * rowHeight;
     return (
         <div className="h-screen w-full bg-white overflow-hidden ">
-            <div className="h-20 bg-[#635db8] rounded-b-lg text-white text-3xl font-semibold flex items-center p-6 pl-12 pr-12">
+            <div className="h-20 bg-[#271F5D] rounded-b-lg text-white text-3xl font-semibold flex items-center p-6 pl-12 pr-12">
                 <div className="flex justify-between items-center w-full">
                     <div className="flex gap-4  items-center">
                         <Icon />
@@ -113,12 +113,11 @@ export default function EmployeeList() {
                         display: "flex",
                         padding: "16px",
                         fontWeight: "bold",
-                        borderBottom: "2px solid #ccc",
+                        border: "2px solid #ccc",
                         height: rowHeight,
                         alignItems: "center",
-                        backgroundColor: "#2a996b",
                         borderRadius:"10px",
-                        color:"white"
+                        color:"black"
                        
                     }}
                 >

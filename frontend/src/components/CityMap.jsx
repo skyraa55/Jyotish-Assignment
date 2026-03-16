@@ -8,6 +8,7 @@ import {
   useMap
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+
 const cityCoordinates = {
   Edinburgh: [55.9533, -3.1883],
   Tokyo: [35.6762, 139.6503],
@@ -25,11 +26,12 @@ function FitBounds() {
   }, [map]);
   return null;
 }
+
 export default function CityMap({ employees = [] }) {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center bg-white p-8 rounded-xl">
       <div className="w-[700px]">
-        <h2 className="text-xl font-semibold mb-4 text-center">
+        <h2 className="text-2xl font-semibold mb-4 text-center">
           Employee Cities Map
         </h2>
         <MapContainer
@@ -54,12 +56,12 @@ export default function CityMap({ employees = [] }) {
                 radius={12}
                 pathOptions={{
                   color: "#1D4ED8",
-                  fillColor: "#3B82F6",
+                  fillColor: "#271F5D",
                   fillOpacity: 0.9,
                   weight: 2
                 }}
               >
-                <Tooltip permanent direction="top" offset={[0, -8]}>
+                <Tooltip permanent direction="top" offset={[0, -8]} className="text-md">
                   {city}
                 </Tooltip>
                 <Popup>
@@ -69,8 +71,8 @@ export default function CityMap({ employees = [] }) {
                 </Popup>
               </CircleMarker>
             );
-          })}
 
+          })}
         </MapContainer>
       </div>
     </div>
