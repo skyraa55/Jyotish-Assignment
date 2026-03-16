@@ -29,8 +29,6 @@ export default function EmployeeList() {
         const data = res.data?.TABLE_DATA?.data || [];
         setEmployees(data);
         localStorage.setItem("employees", JSON.stringify(data));
-
-
     }
     const visibleRows = Math.ceil(containerHeight / rowHeight);
     const startIndex = Math.floor(scrollTop / rowHeight);
