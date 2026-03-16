@@ -20,7 +20,6 @@ export default function EmployeeList() {
         else {
             fetchEmployees();
         }
-
     }, []);
     const cityCounts = employees.reduce((acc, emp) => {
         const city = emp[2];
@@ -30,6 +29,11 @@ export default function EmployeeList() {
         acc[city]++;
         return acc;
     }, {});
+    //added the bug intentionally which forgot to remove the eventListener
+    useEffect(() => {
+        const handleScroll = () => console.log(window.scrollY);
+        window.addEventListener("scroll", handleScroll);
+    }, []);
     const fetchEmployees = async () => {
         const res = await axios.post("https://backend.jotish.in/backend_dev/gettabledata.php", {
             username: "test",
@@ -116,18 +120,18 @@ export default function EmployeeList() {
                         border: "2px solid #ccc",
                         height: rowHeight,
                         alignItems: "center",
-                        borderRadius:"10px",
-                        color:"black"
-                       
+                        borderRadius: "10px",
+                        color: "black"
+
                     }}
                 >
-                    <div style={{ width: "80px",fontSize:"20px" }}>S.No</div>
-                    <div style={{ flex: 1,fontSize:"20px" }}>Name</div>
-                    <div style={{ flex: 1,fontSize:"20px" }}>Position</div>
-                    <div style={{ flex: 1,fontSize:"20px" }}>City</div>
-                    <div style={{ flex: 1 ,fontSize:"20px"}}>Extn.</div>
-                    <div style={{ flex: 1 ,fontSize:"20px"}}>Start Date</div>
-                    <div style={{ flex: 1 ,fontSize:"20px"}}>Salary</div>
+                    <div style={{ width: "80px", fontSize: "20px" }}>S.No</div>
+                    <div style={{ flex: 1, fontSize: "20px" }}>Name</div>
+                    <div style={{ flex: 1, fontSize: "20px" }}>Position</div>
+                    <div style={{ flex: 1, fontSize: "20px" }}>City</div>
+                    <div style={{ flex: 1, fontSize: "20px" }}>Extn.</div>
+                    <div style={{ flex: 1, fontSize: "20px" }}>Start Date</div>
+                    <div style={{ flex: 1, fontSize: "20px" }}>Salary</div>
                 </div>
                 <div style={{
                     height: containerHeight,
